@@ -30,8 +30,9 @@
             object-fit: cover;
             width: 700px;
         }
-        
-        .profile__table-title {
+
+        .profile__table-title,
+        .profile__form-title {
             text-align: center;
         }
 
@@ -46,6 +47,28 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
+        }
+
+        form {
+            padding: 1rem;
+            width: 60%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        form div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile__form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            margin-bottom: .5rem;
         }
     </style>
 </head>
@@ -132,7 +155,62 @@
 
         </section>
         <section class="profile__form">
+            <h2 class="profile__form-title">Leave A Message</h2>
+            <div class="profile__form-wrapper">
+                <form action="">
+                    <div>
+                        <label for="">First Name: </label>
+                        <input type="text">
 
+                        <label for="">Last Name: </label>
+                        <input type="text">
+
+                        <label for="">ID Type: </label>
+                        <input type="text">
+
+                        <label>Choose Your Gender</label>
+                        <div style="display: flex; flex-direction: row;">
+
+                            <input type="radio" name="" id="">
+                            <label for="">Male</label>
+                            <input type="radio" name="" id="">
+                            <label for="">Female</label>
+                            <input type="radio" name="" id="">
+                            <label for="">Other</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="">Age: </label>
+                        <input type="number">
+
+                        <label for="">Phone Number: </label>
+                        <input type="text">
+
+                        <label for="">ID Number: </label>
+                        <input type="text">
+                        <br>
+                    </div>
+
+                    <div>
+                        <label for="">Enter your message:</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+                    </div>
+                    
+
+
+
+                </form>
+
+                
+                
+                
+            </div>
+
+            <div style="display: flex;justify-content: center;align-items: center;">     
+                <button type="submit" >Submit</button>
+            </div>
         </section>
     </main>
 </body>
