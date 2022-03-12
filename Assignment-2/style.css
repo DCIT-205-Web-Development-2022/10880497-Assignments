@@ -99,7 +99,11 @@ img {
 /* NAVBAR   */
 .header {
 	background-color: var(--container-color);
-	height: 3rem;
+	height: 4rem;
+    padding: 1rem;
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 }
 
 .nav {
@@ -113,4 +117,9 @@ img {
 .nav__list {
 	display: flex;
 	column-gap: 2rem;
+}
+
+.nav__link,
+.nav__logo {
+    color: #fff;
 }
