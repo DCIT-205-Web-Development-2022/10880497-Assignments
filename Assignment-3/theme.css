@@ -7,7 +7,7 @@
 
     /*========== Colors ==========*/
     /*If you want to change main theme color */
-    --hue-color: 300; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color: 270; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
     /* HSL color mode */
     --first-color: hsl(var(--hue-color), 69%, 61%);
@@ -162,6 +162,8 @@ button {
     padding: 1rem;
     border-radius: .5rem;
     font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-75);
+    margin-top: var(--mb-0-75);
 }
 
 .button:hover {
@@ -342,6 +344,46 @@ nav {
     margin-bottom: var(--mb-0-75);
 }
 
+/*==================== ABOUT ====================*/
+.about__img {
+    width: 250px;
+    border-radius: 0.5rem;
+    justify-self: center;
+    align-self: center;
+}
+
+.about__decription {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.about__info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2-5);
+    margin-top: var(--mb-2-5);
+}
+
+.about__info-title {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    color:var(--title-color);
+}
+
+.about__info-name {
+    font-size: var(--smaller-font-size);
+}
+
+.about__info-title,
+.about__info-name {
+    display: block;
+    text-align: center;
+}
+
+.about__buttons {
+    display: flex;
+    justify-content: center;
+}
 
 
 
@@ -441,6 +483,10 @@ nav {
         justify-self: center;
     }   
 
+    .about__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 @media screen and (min-width:768px) {
@@ -505,6 +551,17 @@ nav {
         width: 350px;
     }
 
+    .about__container {
+        column-gap: 5rem;
+    }
+
+    .about__img {
+        width: 450px;
+    }
+
+    .about__decription {
+        text-align: initial;
+    }
     
 
     .footer__container {
