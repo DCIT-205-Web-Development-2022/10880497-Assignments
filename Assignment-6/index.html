@@ -23,6 +23,61 @@
             For correct user inputs, show the user inputs in an alert window. Otherwise, warn the user in an alert window. 
     -->
 
+    <form id="medical-form" action="">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <table border="1">
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="firstname" maxlength="50" /></td>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="" id="">Female
+                        <input type="radio" name="" id="">Male
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="firstname" maxlength="50" /></td>
+                    <td>Nationality</td>
+                    <td>
+                        <select name="nationality" id="nationality">
+                            <option value="">Canadian</option>
+                            <option value="">American</option>
+                            <option value="">French</option>
+                            <option value="">Chinese</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea name="address" id="" cols="30" rows="5"></textarea></td>
+                    
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Medical History</legend>
+            <input type="checkbox" name="" id=""> SmallPox
+            <input type="checkbox" name="" id=""> Mumps
+            <input type="checkbox" name="" id=""> Dizziness
+            <input type="checkbox" name="" id=""> Sneezing
+        </fieldset>
+        <fieldset>
+            <legend>Current Medication</legend>
+            Are you currently taking any medication? 
+            <input type="radio" name="" id="">Yes
+            <input type="radio" name="" id="">No
+            <br>
+            If you are taking any medication, indicate in below:
+            <br>
+            <textarea name="" id="" cols="60" rows="10"></textarea>
+        </fieldset>
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
     <script src="/validate_form.js"></script>
 </body>
 
