@@ -13,7 +13,25 @@
 //             For correct user inputs, show the user inputs in an alert window. Otherwise, warn the user in an alert window.
 
 function validateForm() {
+    // Variables
     var firstName = document.medicalForm.firstname.value
     var lastName = document.medicalForm.lastname.value
     var address = document.medicalForm.address.value
+    var currentMedication = document.medicalForm.currentMedication.value
+
+    // Validation Rules
+    // Should not be empty
+    if (firstName == "") {
+        alert("First name cannot be empty")
+        return false
+    } else if (lastName == "") {
+        alert("Last name cannot be empty")
+        return false
+    } else if (address == "") {
+        alert("Address cannot be empty")
+        return false
+    } else if (currentMedication == "") {
+        alert("Current medication cannot be empty")
+        return false
+    }
 }
