@@ -17,6 +17,8 @@
 const firstname = document.getElementById('firstname')
 const lastname = document.getElementById('lastname')
 const address = document.getElementById('address')
+const female = document.getElementById('female')
+const male = document.getElementById('male')
 const takingMeds = document.getElementById('yes')
 const notTakingMeds = document.getElementById('no')
 const takingMedsTextarea = document.getElementById('takingMedsTextarea')
@@ -63,6 +65,20 @@ const validateForm = () => {
 		alert('Address cannot be more than 300 characters')
 		return false
     }
+
+    // Validate Gender
+    if (female.checked === false && male.checked === false) {
+        alert("Please select at least one gender")
+    }
+
+    // variables to display gender
+    let checkGender = null
+
+    if (female.checked === true) {
+        checkGender = "Female"
+    } else if (male.checked === true) {
+        checkGender = "Male"
+    }
     
     // Validate Medical History
     if (smallpox.checked === false && mumps.checked === false && dizziness.checked === false && sneezing.checked === false) {
@@ -91,13 +107,11 @@ const validateForm = () => {
 
     // medical history array
     const medicalHistoryArray = [smallpoxChecked, mumpsChecked, dizzinessChecked, sneezingChecked]
-    console.log(medicalHistoryArray)
     let medicalHistory = ""
 
     for (let i = 0; i <= medicalHistoryArray.length; i++) {
         if (medicalHistoryArray[i] !== undefined && medicalHistoryArray[i] !== null) {
-            medicalHistory = medicalHistory + ", " + medicalHistoryArray[i]
-            console.log(medicalHistory)
+            medicalHistory = medicalHistory + " " + medicalHistoryArray[i]
         }
     }
 
@@ -116,8 +130,9 @@ const validateForm = () => {
 	alert(
         `First Name: ${firstnameValue}\n
         Last Name: ${lastnameValue}\n
+        Gender: ${checkGender}\n
         Address: ${addressValue}\n
         Medical History: ${medicalHistory}\n
-        Current Medication: ${takingMedsValue}\n`
+        Current Medication: ${takingMedsValue || "None"}\n`
 	)
 }
