@@ -20,6 +20,10 @@ const address = document.getElementById('address')
 const takingMeds = document.getElementById('yes')
 const notTakingMeds = document.getElementById('no')
 const takingMedsTextarea = document.getElementById('takingMedsTextarea')
+const smallpox = document.getElementById('smallpox')
+const mumps = document.getElementById('mumps')
+const dizziness = document.getElementById('dizziness')
+const sneezing = document.getElementById('sneezing')
 
 // Event Listeners
 form.addEventListener('submit', (e) => {
@@ -58,7 +62,44 @@ const validateForm = () => {
 	} else if (addressValue.length > 300) {
 		alert('Address cannot be more than 300 characters')
 		return false
-	}
+    }
+    
+    // Validate Medical History
+    if (smallpox.checked === false && mumps.checked === false && dizziness.checked === false && sneezing.checked === false) {
+        alert('Please select at least one medical history')
+        return false
+    } 
+
+    // variables to display user inputs for medical history
+    let smallpoxChecked = null
+    let mumpsChecked = null
+    let dizzinessChecked = null
+    let sneezingChecked = null
+
+    if (smallpox.checked === true) {
+        smallpoxChecked = "Smallpox"
+    }
+    if (mumps.checked === true) {
+        mumpsChecked = "Mumps"
+    }
+    if (dizziness.checked === true) {
+        dizzinessChecked = "Dizziness"
+    }
+    if (sneezing.checked === true) {
+        sneezingChecked = "Sneezing"
+    }
+
+    // medical history array
+    const medicalHistoryArray = [smallpoxChecked, mumpsChecked, dizzinessChecked, sneezingChecked]
+    console.log(medicalHistoryArray)
+    let medicalHistory = ""
+
+    for (let i = 0; i <= medicalHistoryArray.length; i++) {
+        if (medicalHistoryArray[i] !== undefined && medicalHistoryArray[i] !== null) {
+            medicalHistory = medicalHistory + ", " + medicalHistoryArray[i]
+            console.log(medicalHistory)
+        }
+    }
 
 	// Validate Current Medication
 	if (!notTakingMeds.checked && !takingMeds.checked) {
@@ -73,6 +114,10 @@ const validateForm = () => {
 
 	// Show user inputs
 	alert(
-		`First Name: ${firstnameValue}\nLast Name: ${lastnameValue}\nAddress: ${addressValue}`
+        `First Name: ${firstnameValue}\n
+        Last Name: ${lastnameValue}\n
+        Address: ${addressValue}\n
+        Medical History: ${medicalHistory}\n
+        Current Medication: ${takingMedsValue}\n`
 	)
 }
