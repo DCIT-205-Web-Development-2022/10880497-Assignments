@@ -12,26 +12,50 @@
 //             Maximum input characters of "Address" are 300 characters.
 //             For correct user inputs, show the user inputs in an alert window. Otherwise, warn the user in an alert window.
 
-function validateForm() {
-    // Variables
-    var firstName = document.medicalForm.firstname.value
-    var lastName = document.medicalForm.lastname.value
-    var address = document.medicalForm.address.value
-    var currentMedication = document.medicalForm.currentMedication.value
+// Variables
+const firstname = document.getElementById("firstname");
+const lastname = document.getElementById("lastname");
+const address = document.getElementById("address");
 
-    // Validation Rules
-    // Should not be empty
-    if (firstName == "") {
-        alert("First name cannot be empty")
-        return false
-    } else if (lastName == "") {
-        alert("Last name cannot be empty")
-        return false
-    } else if (address == "") {
-        alert("Address cannot be empty")
-        return false
-    } else if (currentMedication == "") {
-        alert("Current medication cannot be empty")
-        return false
+
+// Event Listeners
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    validateForm();
+})
+
+const validateForm = () => { 
+    const firstnameValue = firstname.value.trim();
+    const lastnameValue = lastname.value.trim();
+    const addressValue = address.value.trim();
+
+    // Validate First Name
+    if (firstnameValue === "") {
+        alert("First Name cannot be empty");
+        return false;
+    } else if (firstnameValue.length > 50) {
+        alert("First Name cannot be more than 50 characters");
+        return false;
     }
+
+    // Validate Last Name
+    if (lastnameValue === "") {
+        alert("Last Name cannot be empty");
+        return false;
+    } else if (lastnameValue.length > 50) {
+        alert("Last Name cannot be more than 50 characters");
+        return false;
+    }
+
+    // Validate Address
+    if (addressValue === "") {
+        alert("Address cannot be empty");
+        return false;
+    } else if (addressValue.length > 300) {
+        alert("Address cannot be more than 300 characters");
+        return false;
+    }
+
+    // Show user inputs
+    alert(`First Name: ${firstnameValue}\nLast Name: ${lastnameValue}\nAddress: ${addressValue}`);
 }
