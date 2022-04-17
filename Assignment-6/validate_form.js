@@ -79,6 +79,9 @@ const validateForm = () => {
     } else if (male.checked === true) {
         checkGender = "Male"
     }
+
+    // Validate Nationality
+    
     
     // Validate Medical History
     if (smallpox.checked === false && mumps.checked === false && dizziness.checked === false && sneezing.checked === false) {
